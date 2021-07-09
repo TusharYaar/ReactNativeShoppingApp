@@ -1,9 +1,9 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View,FlatList } from "react-native";
 
 const ProductsOverviewScreen = () => {
   return (
-    <View>
+    <View style={styles.screen}>
       <Text>ProductsOverviewScreen</Text>
     </View>
   );
