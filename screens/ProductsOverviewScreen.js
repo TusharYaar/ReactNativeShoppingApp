@@ -1,11 +1,13 @@
 import React from "react";
 import { StyleSheet, Text, View, FlatList } from "react-native";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch} from "react-redux";
+import {addToCart} from "../store/actions/cart";
 
 import ProductItem from "../components/ProductItem";
 
 const ProductsOverviewScreen = (props) => {
   const products = useSelector((state) => state.products.filteredProducts);
+  const dispatch = useDispatch();
   return (
     <View style={styles.screen}>
       <FlatList
@@ -19,7 +21,9 @@ const ProductsOverviewScreen = (props) => {
                 title: item.item.title,
               });
             }}
-            addToCart={() => {}}
+            addToCart={() => {
+              dispatch(addToCart(item.item))
+            }}
           />
         )}
         style={{ width: "100%" }}

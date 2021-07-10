@@ -12,7 +12,7 @@ const ProductItem = (props) => {
             <Text style={styles.price}>${props.item.price.toFixed(2)}</Text>
             </View>
             <View>
-                <Button color={COLORS.primary} title="Add to Cart" onPress={()=>{}}/>
+                <Button color={COLORS.primary} title="Add to Cart" onPress={props.addToCart}/>
             </View>
         </View>
         </TouchableOpacity>
